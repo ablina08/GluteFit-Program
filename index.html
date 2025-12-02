@@ -67,3 +67,124 @@
   </div>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gluteworkouts</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+}
+h1 {
+  color: #ff69b4;
+  font-size: 48px;
+}
+p { font-size: 18px; margin-bottom: 30px; }
+
+.buy-btn {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 250px;
+  display: block;
+  margin: 15px auto;
+  background: linear-gradient(45deg,#ff69b4,#ff1493);
+  color: white;
+  transition: 0.3s;
+}
+.buy-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255,20,147,0.5);
+}
+
+.program-content {
+  margin-top: 30px;
+  display: none;
+  background: #222;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.program-content h2 {
+  color: #ff1493;
+}
+
+.program-content ul { line-height: 1.6; }
+
+</style>
+</head>
+<body>
+
+<h1>Gluteworkouts 💪🍑</h1>
+<p>Zgjidh programin dhe paguaj:</p>
+
+<!-- Glute Program – 15€ -->
+<form id="gluteForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <input type="hidden" name="business" value="alteal2024@gmail.com">
+  <input type="hidden" name="cmd" value="_xclick">
+  <input type="hidden" name="item_name" value="Glute Program">
+  <input type="hidden" name="amount" value="15.00">
+  <input type="hidden" name="currency_code" value="EUR">
+  <button type="submit" class="buy-btn">Buy Glute Program – 15€</button>
+</form>
+
+<!-- Full Bundle – 35€ -->
+<form id="fullForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <input type="hidden" name="business" value="alteal2024@gmail.com">
+  <input type="hidden" name="cmd" value="_xclick">
+  <input type="hidden" name="item_name" value="Full Bundle">
+  <input type="hidden" name="amount" value="35.00">
+  <input type="hidden" name="currency_code" value="EUR">
+  <button type="submit" class="buy-btn">Buy Full Bundle – 35€</button>
+</form>
+
+<div id="programContent" class="program-content"></div>
+
+<script>
+const programDiv = document.getElementById('programContent');
+
+// Glute Program content
+document.getElementById('gluteForm').addEventListener('submit', () => {
+  setTimeout(() => {
+    programDiv.style.display='block';
+    programDiv.innerHTML = `<h2>Glute Program – 4 Javë 🍑</h2>
+<ul>
+<li>Java 1: Squats 3x12, Glute Bridges 3x15, Donkey Kicks 3x12</li>
+<li>Java 2: Lunges 3x12, Hip Thrust 3x15, Fire Hydrants 3x12</li>
+<li>Java 3: Bulgarian Split Squat 3x12, Single-Leg Glute Bridge 3x15, Kickbacks 3x12</li>
+<li>Java 4: Curtsy Lunge 3x12, Frog Pumps 3x20, Sumo Squat 3x12</li>
+</ul>
+<p>Warm-up 5 min, Stretch pas çdo seance, 3-4 herë në javë</p>`;
+  }, 3000); // 3 sekonda delay pas pagesës
+});
+
+// Full Bundle content
+document.getElementById('fullForm').addEventListener('submit', () => {
+  setTimeout(() => {
+    programDiv.style.display='block';
+    programDiv.innerHTML = `<h2>Full Bundle – Glute + Belly Program 💪</h2>
+<ul>
+<li>Glute Program si më sipër</li>
+<li>Belly/Fat Loss Program: Crunches, Planks, Bicycle Crunch, Mountain Climbers</li>
+<li>3-4 seanca në javë</li>
+<li>Protein + veggies + carbs kontrolluar</li>
+</ul>
+<p>Warm-up 5 min, Stretch pas çdo seance</p>`;
+  }, 3000);
+});
+</script>
+
+</body>
+</html>
